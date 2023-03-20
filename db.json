@@ -1,0 +1,43 @@
+{
+    "transfers": [
+      {
+        "id": 1,
+        "from": "rahul@gmail.com",
+        "amount": 1000,
+        "to": "madhuka@gmail.com"
+      },
+      {
+        "id": 2,
+        "from": "rahul@gmail.com",
+        "amount": 2000,
+        "to": "madhuka@gmail.com"
+      },
+      {
+        "id": 3,
+        "from": "keshara@gmail.com",
+        "amount": 1000,
+        "to": "rahul@gmail.com"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Rahul",
+        "email": "email",
+        "password": "123"
+      },
+      {
+        "id": 2,
+        "name": "Madhuka",
+        "email": "email 2",
+        "password": "123"
+      },
+      {
+        "id": 3,
+        "name": "Keshara",
+        "email": "email 3",
+        "password": "123"
+      }
+    ]
+
+  }
