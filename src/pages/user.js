@@ -90,7 +90,7 @@ export default function Profile() {
                                             <TableRow>
                                                 <TableCell style={{ fontWeight: 'bold' }} >Transaction ID</TableCell>
                                                 <TableCell style={{ fontWeight: 'bold' }} align="right">Transaction Date</TableCell>
-                                                <TableCell style={{ fontWeight: 'bold' }} align="right">Transaction Amount</TableCell>
+                                                <TableCell style={{ fontWeight: 'bold' }} align="right">Transaction Amount (RS.)</TableCell>
                                                 <TableCell style={{ fontWeight: 'bold' }} align="right">Sent To</TableCell>
                                             </TableRow>
                                         </TableHead>

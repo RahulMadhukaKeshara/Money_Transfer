@@ -18,27 +18,29 @@ export default async function handler(req, res) {
       await con();
       const userOb = await Users.findOne({ email: from })
 
-      console.log(req.body);
-      await Transfers.create({
-        from: from,
-        to: to,
-        amount: amount,
-        date: date,
-      })
-      .then(() => res.json('Transfer Success!'))
-      .catch(err => res.status(400).json('Error: ' + err));
-      
-      await sendEmail({
-        from: process.env.EMAIL_ADDRESS,
-        to: to,
-        subject: `Money Received`,
-        text: `You have received Rs. ${amount} by  ${userOb.fname} ${userOb.lname} on ${date}.`,
-      }).then(console.log('Email Sent'))
+      try {
+        await Transfers.create({
+          from: from,
+          to: to,
+          amount: amount,
+          date: date,
+        })
 
-      
-  
+        await sendEmail({
+          from: process.env.GMAIL_EMAIL_ADDRESS,
+          to: to,
+          subject: `Money Received`,
+          text: "",
+          html:`<p>Dear Sir/Madam,</p><p>You have received <strong>Rs. ${amount}</strong> by  <strong>${userOb.fname} ${userOb.lname}</strong> on <strong>${date}</strong>.</p>`
+        })
+        return res.status(200).json('Transfer Success!')
+      } catch (error) {
+        console.log(error)
+        return res.status(400).json({message:error.message})
+      }
+    
     } catch (error) {
-      console.error('Error :', error);
+      return res.status(400).json({message:error.message})
     }
 
 
